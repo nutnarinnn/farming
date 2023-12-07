@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c78f661c5c07397418889f5ec719d712, type: 3}
+  m_Name: Super Tomato
+  m_EditorClassIdentifier: 
+  plantName: Super Tomato
+  plantStages:
+  - {fileID: 1079136106, guid: 29cbc8e2a7882f84e9ecfa6c777dbc70, type: 3}
+  - {fileID: 554800425, guid: 29cbc8e2a7882f84e9ecfa6c777dbc70, type: 3}
+  - {fileID: -1950537320, guid: 29cbc8e2a7882f84e9ecfa6c777dbc70, type: 3}
+  - {fileID: 593629689, guid: 29cbc8e2a7882f84e9ecfa6c777dbc70, type: 3}
+  timeBtwStages: 10
+  buyPrice: 50
+  sellPrice: 120
+  icon: {fileID: 1270039045, guid: 29cbc8e2a7882f84e9ecfa6c777dbc70, type: 3}
+  dryPlanted: {fileID: -177845494, guid: e1954a6bb76cdc34db1ff527a413a7ab, type: 3}
+  quantity: 0
