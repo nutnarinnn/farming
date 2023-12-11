@@ -66,7 +66,7 @@ public class PlotManager : MonoBehaviour
 
 	private void OnMouseDown()
 	{
-		if (isPlanted)
+		/*if (isPlanted)
 		{
 			if (plantStage == selectedPlant.plantStages.Length - 1 && !fm.isPlanting && !fm.isSelecting)
 			{
@@ -76,6 +76,10 @@ public class PlotManager : MonoBehaviour
 			}
 		}
 		else if (fm.isPlanting && fm.selectPlant.plant.buyPrice <= fm.money && isBought)
+		{
+			Plant(fm.selectPlant.plant);
+		}*/
+		if (fm.isPlanting && fm.selectPlant.plant.buyPrice <= fm.money && isBought)
 		{
 			Plant(fm.selectPlant.plant);
 		}
