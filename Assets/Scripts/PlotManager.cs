@@ -7,6 +7,7 @@ public class PlotManager : MonoBehaviour
     public bool isPlanted = false;
     SpriteRenderer plant;
     BoxCollider2D plantCollider;
+	SpriteRenderer coin;
 
     public int plantStage = 0;
     float timer;
@@ -29,13 +30,14 @@ public class PlotManager : MonoBehaviour
 
     public bool isBought = true;
 
-    // Start is called before the first frame update
     void Start()
     {
         plant = transform.GetChild(0).GetComponent<SpriteRenderer>();
         plantCollider = transform.GetChild(0).GetComponent<BoxCollider2D>();
         fm = transform.parent.GetComponent<FarmManager>();
         plot = GetComponent<SpriteRenderer>();
+		coin = transform.GetChild(1).GetComponent<SpriteRenderer>();
+		coin.gameObject.SetActive(false);
 		if (isBought )
 		{
 			plot.sprite = drySprite;
@@ -173,6 +175,7 @@ public class PlotManager : MonoBehaviour
 		plot.sprite = drySprite;
         speed = 1f;
 		Debug.Log("Harvested " + selectedPlant.plantName);
+		coin.gameObject.SetActive(false);
 	}
 
 	void Plant(PlantObject newPlant)
@@ -186,6 +189,7 @@ public class PlotManager : MonoBehaviour
 		plantStage = 0;
         UpdatePlant();
         timer = selectedPlant.timeBtwStages;
+		coin.gameObject.SetActive(false);
 		plant.gameObject.SetActive(true);
 	}
 
@@ -201,5 +205,9 @@ public class PlotManager : MonoBehaviour
 		}
         plantCollider.size = plant.sprite.bounds.size;
         plantCollider.offset = new Vector2(0, plant.bounds.size.y / 2);
+		if (plantStage == selectedPlant.plantStages.Length - 1)
+		{
+			coin.gameObject.SetActive(true);
+		}
     }
 }
